@@ -1,35 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="choice">
     <head>
-        <title>Tony Speaking</title>
-        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- https://sourcefoundry.org/hack/ -->
-        <link rel='stylesheet' href="Hack/hack-subset.css">
-
+        <title>Choose Your Path</title>
+        <style>
+            body {
+                background-image: url(images/mixedbag.png);
+                background-repeat: no-repeat;
+                /* background-size: cover; */
+                background-size: 100% 100%;
+                background-attachment: fixed;
+            }
+            .containerRed,.containerBlue {
+                position: relative;
+                width: auto;
+            }
+            .containerBlue:hover a {
+                opacity: 0.5;
+            }
+            .containerRed:hover a {
+                opacity: 0.5;
+            }
+            .containerRed:hover .middle {
+                opacity: 1;
+            }
+            .containerBlue:hover .middle {
+                opacity: 1;
+            }
+            .middle {
+                transition: .5s ease;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                text-align: center;
+            }
+            .textRed {
+                background-color: black;
+                color: yellow;
+                font-family: Hack;
+                font-size: 16px;
+                padding: 16px 32px;
+            }
+            .textBlue {
+                background-color: white;
+                color: navy;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 16px;
+                padding: 16px 32px;
+            }
+            .row {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* text-align: center; */
+            }
+            /* .row {
+                background: red;
+                bottom: 0;
+                height: 100px;
+                left: 0;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100px;
+            } */
+            .column {
+                flex: 33.33%;
+                padding: 5px;
+            }
+        </style>
     </head>
-    <body>
-        <!-- Sidebar Div -->
-        <div class="sidenav">
 
-            <img src="tonyeus.jpg" alt="a picture of tony" class="circular--square">
-
-            <p>INFINITE LEARNER.</p>
-            <p>TROUBLEMAKER.</p>
-            <p>NERD.</p>
-
-
-            <hr>
-
-            <a href="#about">about me</a>
-            <a href="#experience">experience</a>
-            <a href="#portfolio">portfolio</a>
-            <a href="#contact">contact me</a>
+    <body class="choicebody">
+        <div class="row">
+            <div class="containerRed">
+                <a href="">
+                    <img src="images/billpill.png" class="redimg" alt=""></a>
+                    <div href="" class="middle">
+                        <div class="textBlue">Bliss</div></div>
+            </div>
+            <div class ="containerBlue">
+                <a href="">
+                    <img src="images/redpill.png" class="blueimg" alt=""></a>
+                    <div href="" class="middle">
+                        <div class="textRed">Truth</div></div>
+            </div>
         </div>
-        <!-- Main Div -->
-        <div class="main">
-            <h2>Welcome!</h2>
-            <p>this is a test this is a test this is a test this is a test this is a test this is a test </p>
-        </div> 
+        
     </body>
 </html>
