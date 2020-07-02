@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="choice">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Choose Your Path</title>
+        <style>
+            body {
+                background-image: url(images/mixedbag.png);
+                background-repeat: no-repeat;
+                /* background-size: cover; */
+                background-size: 100% 100%;
+                background-attachment: fixed;
+            }
+            .containerRed,.containerBlue {
+                position: relative;
+                width: auto;
+            }
+            .containerBlue:hover a {
+                opacity: 0.5;
+            }
+            .containerRed:hover a {
+                opacity: 0.5;
+            }
+            .containerRed:hover .middle {
+                opacity: 1;
+            }
+            .containerBlue:hover .middle {
+                opacity: 1;
+            }
+            .middle {
+                transition: .5s ease;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                text-align: center;
+            }
+            .textRed {
+                background-color: black;
+                color: yellow;
+                font-family: Hack;
+                font-size: 16px;
+                padding: 16px 32px;
+            }
+            .textBlue {
+                background-color: white;
+                color: navy;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 16px;
+                padding: 16px 32px;
+            }
+            .row {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* text-align: center; */
+            }
+            /* .row {
+                background: red;
+                bottom: 0;
+                height: 100px;
+                left: 0;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100px;
+            } */
+            .column {
+                flex: 33.33%;
+                padding: 5px;
+            }
+        </style>
+        
+        <link rel='stylesheet' href="Hack/hack-subset.css">
+    </head>
+
+    <body class="choicebody">
+        <div class="row">
+            <div class="containerRed">
+                <a href="">
+                    <img src="images/billpill.png" class="redimg" alt=""></a>
+                    <div href="" class="middle">
+                        <div class="textBlue">Bliss</div></div>
+            </div>
+            <div class ="containerBlue">
+                <a href="">
+                    <img src="images/redpill.png" class="blueimg" alt=""></a>
+                    <div href="" class="middle">
+                        <div class="textRed">truth</div></div>
+            </div>
+        </div>
+        
+    </body>
+</html>
