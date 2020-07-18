@@ -1,17 +1,7 @@
 @font-face {
   font-family: "Hack";
   font-display: swap;
-  src: url("../fonts/Hack.woff") format("woff");
-}
-@font-face {
-  font-family: "Playfair_Display";
-  font-display: swap;
-  src: url("../fonts/Playfair_Display.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Cormorant_Garamond";
-  font-display: swap;
-  src: url("../fonts/Cormorant_Garamond.ttf") format("truetype");
+  src: url(../fonts/Hack/hack-regular.woff) format("woff");
 }
 
 /*# sourceMappingURL=styles.css.map */
