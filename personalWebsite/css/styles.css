@@ -70,13 +70,17 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.header_area .main-menu .navbar-toggler {
+  background: #e59500ff;
+  color: red;
+}
 
 html, body {
   margin: 0%;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  background-color: #0d0a0bff;
+  background-color: whitesmoke;
 }
 
 .site-main .site-banner .site-title h3 {

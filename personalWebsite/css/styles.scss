@@ -185,6 +185,14 @@ $gradient-radial: radial-gradient(#0d0a0bff, #6dcd3cff, #ffb81fff, #e61d0fff, #f
             background-clip: text;
         }
     }
+
+    .navbar-toggler {
+        background: $gamboge;
+        color: red;
+        // position: ;
+    }
+
+
 }
 
 
@@ -196,7 +204,8 @@ html, body {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-color: $rich-black-fogra-39;
+    // background-color: $rich-black-fogra-39;
+    background-color: whitesmoke;
 }
 
 // start banner
