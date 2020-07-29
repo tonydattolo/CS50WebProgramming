@@ -1,0 +1,238 @@
+@font-face {
+  font-family: "Hack";
+  font-display: swap;
+  src: url(../fonts/Hack/hack-regular.woff) format("woff");
+}
+@font-face {
+  font-family: "Playfair_Display";
+  font-display: swap;
+  src: url(../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf) format("ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  font-display: swap;
+  src: url(../fonts/Poppins/Poppins-Regular.ttf) format("ttf");
+}
+@font-face {
+  font-family: "Matrix";
+  font-display: swap;
+  src: url(../fonts/MatrixFont/Matrix-MZ4P.ttf) format("truetype");
+}
+@font-face {
+  font-family: "LCDsolid";
+  font-display: swap;
+  src: url(../fonts/LCDsolid/LcdSolid-VPzB.ttf) format("truetype");
+}
+@font-face {
+  font-family: "EdgeOfTheGalaxy";
+  font-display: swap;
+  src: url(../fonts/EdgeOfTheGalaxy/EdgeOfTheGalaxyRegular-OVEa6.otf) format("otf");
+}
+@font-face {
+  font-family: "AlphaCenturi";
+  font-display: swap;
+  src: url(../fonts/AlphaCenturi/Alphacentauri-MVY4p.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Mandalore";
+  font-display: swap;
+  src: url(../fonts/mandalore-font/Mandalore-K77lD.otf) format("otf");
+}
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  font-family: "Poppins", sans-serif;
+  background: #0c1531ff;
+  color: #eab934ff;
+  transition: all 0.3s;
+}
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #0c1531ff;
+}
+#sidebar .sidebar-header img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: auto auto;
+}
+#sidebar .sidebar-header .userGreeting {
+  display: grid;
+  place-items: center;
+}
+#sidebar .sidebar-header i {
+  font-size: 72px;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+}
+#sidebar.switcheroo {
+  min-width: 80px;
+  max-width: 80px;
+  text-align: center;
+}
+#sidebar.switcheroo .userGreeting {
+  display: none;
+}
+#sidebar.switcheroo .sidebar-header i {
+  font-size: 32px;
+  margin-top: 5px;
+  padding: 5px;
+}
+#sidebar.switcheroo #dismiss {
+  display: grid;
+  place-items: center;
+  transform: scaleX(-1);
+}
+#sidebar.switcheroo ul li a {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 0.85em;
+}
+#sidebar.switcheroo ul li a i {
+  margin-right: 0;
+  display: block;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+#sidebar.switcheroo ul ul a {
+  padding: 10px !important;
+}
+#sidebar.switcheroo .sidebarFooter .socialLinks {
+  display: flexbox;
+  padding: 5px;
+  margin-right: 10px;
+}
+#sidebar.switcheroo .sidebarFooter hr {
+  display: grid;
+  place-items: center;
+  width: 50px;
+}
+#sidebar #dismiss {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#sidebar a {
+  color: #fdfffcff;
+  font-weight: 300;
+}
+#sidebar a:hover {
+  background: #eab934ff;
+  font-weight: 300;
+}
+#sidebar a:focus {
+  color: #eab934ff;
+  background-color: #002642ff;
+  transition: all 0.3s;
+}
+#sidebar a[data-toggle=collapse] {
+  position: relative;
+}
+#sidebar .dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+#sidebar ul ul li {
+  background-color: #06456aff;
+}
+#sidebar ul li a {
+  display: block;
+  padding: 10px;
+  font-size: 1em;
+}
+#sidebar ul li a:hover {
+  color: #0c1531ff;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: #cae5ffff;
+}
+#sidebar .sidebarFooter {
+  display: grid;
+  place-items: center;
+}
+#sidebar .sidebarFooter img {
+  max-width: 35%;
+  height: auto;
+  display: block;
+  margin: auto auto;
+  overflow: hidden;
+}
+#sidebar .sidebarFooter .mattressTypography {
+  font-family: "AlphaCenturi";
+  font-size: 1.1em;
+  padding-bottom: 20px;
+  padding-top: 0;
+  display: grid;
+  place-items: center;
+}
+#sidebar .sidebarFooter hr {
+  height: 1px;
+  background-color: white !important;
+  border: none;
+  width: 80%;
+}
+#sidebar .sidebarFooter .socialLinks a {
+  color: #cae5ffff;
+  padding: 3px;
+}
+#sidebar .sidebarFooter .socialLinks a:hover {
+  background-color: white;
+}
+#sidebar .sidebarFooter .socialLinks a:hover#twitter {
+  color: #1da1f2;
+}
+#sidebar .sidebarFooter .socialLinks a:hover#facebook {
+  color: #4267b2;
+}
+#sidebar .sidebarFooter .socialLinks a:hover#youtube {
+  color: #ff0000;
+}
+#sidebar .sidebarFooter .socialLinks a:hover#medium {
+  color: black;
+}
+#sidebar .sidebarFooter .socialLinks a:hover#linkedin {
+  color: #2867b2;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  padding-left: 80px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.overlay.switcheroo {
+  display: block;
+  opacity: 1;
+  margin-left: 80px;
+}
+
+@media (max-width: 768px) {
+  #sidebar.switcheroo {
+    margin-left: 0;
+  }
+}
+body {
+  background-color: lightgray;
+}
+
+/*# sourceMappingURL=styles.css.map */

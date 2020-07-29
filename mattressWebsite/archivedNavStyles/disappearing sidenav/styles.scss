@@ -1,0 +1,254 @@
+// // $primary1: #051c2c;
+// // $primary2: #ffffff;
+
+// @function str-replace($string, $search, $replace: "") {
+// 	$index: str-index($string, $search);
+
+// 	@if $index {
+// 		@return str-slice($string, 1, $index - 1) + $replace +
+// 			str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+// 	}
+
+// 	@return $string;
+// }
+
+
+// @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+// 	$src: null;
+
+// 	$extmods: (
+// 		eot: "?",
+// 		svg: "#" + str-replace($name, " ", "_")
+// 	);
+
+// 	$formats: (
+// 		otf: "opentype",
+// 		ttf: "truetype"
+// 	);
+
+// 	@each $ext in $exts {
+// 		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+// 		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+// 		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+// 	}
+
+// 	@font-face {
+// 		font-family: quote($name);
+// 		font-style: $style;
+// 		font-weight: $weight;
+// 		font-display: swap;
+// 		src: $src;
+// 	}
+// }
+
+// @include font-face(Hack,"../fonts/Hack",null,null,woff);
+// @include font-face(Playfair_Display,"../fonts/Playfair_Display",null,null,ttf);
+// @include font-face(Cormorant_Garamond,"../fonts/Cormorant_Garamond",null,null,ttf);
+//can you use @use instead?
+
+// other method?
+// @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+
+
+@font-face {
+    font-family: 'Hack';
+    // font-style: ;
+    // font-weight: ;
+    font-display: swap;
+    src: url(../fonts/Hack/hack-regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: "Playfair_Display";
+    font-display: swap;
+    src: url(../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-display: swap;
+    src: url(../fonts/Poppins/Poppins-Regular.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: "Matrix";
+    font-display: swap;
+    src: url(../fonts/MatrixFont/Matrix-MZ4P.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "LCDsolid";
+    font-display: swap;
+    src: url(../fonts/LCDsolid/LcdSolid-VPzB.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "EdgeOfTheGalaxy";
+    font-display: swap;
+    src: url(../fonts/EdgeOfTheGalaxy/EdgeOfTheGalaxyRegular-OVEa6.otf) format('otf');
+}
+
+@font-face {
+    font-family: "AlphaCenturi";
+    font-display: swap;
+    src: url(../fonts/AlphaCenturi/Alphacentauri-MVY4p.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Mandalore";
+    font-display: swap;
+    src: url(../fonts/mandalore-font/Mandalore-K77lD.otf) format('otf');
+}
+
+// Global Variable Start
+
+    //fonts
+$navbarFont: "Poppins";
+
+    //colors
+$primaryBlack: black;
+$secondaryYellow: yellow;
+
+$prussian-blue: #002642ff;
+$claret: #840032ff;
+$gamboge: #e59500ff;
+$gainsboro: #e5dadaff;
+$rich-black-fogra-29: #02040fff;
+$cultured: #eef0f2ff;
+$ghost-white: #fafaffff;
+
+$rich-black-fogra-39: #0d0a0bff;
+$lime-green: #6dcd3cff;
+$selective-yellow: #ffb81fff;
+$vermilion: #e61d0fff;
+$baby-powder: #fdfffcff;
+
+
+$oxford-blue: #0c1531ff;
+$indigo-dye: #06456aff;
+$celadon-blue: #0075a2ff;
+$beau-blue: #cae5ffff;
+$alice-blue: #e0ecfaff;
+$cultured: #f5f3f5ff;
+$platinum: #dfe2e2ff;
+$saffron: #eab934ff;
+
+// Global Variable End
+
+// guide used: https://bootstrapious.com/p/bootstrap-sidebar
+
+// start navigation
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+
+    font-family: $navbarFont, sans-serif;
+    background: $oxford-blue;
+    color: $saffron;
+    transition: all 0.3s;
+
+    .sidebar-header {
+        font-family: "AlphaCenturi";
+        padding: 20px;
+        background: $oxford-blue;
+        // background: $vermilion;
+
+        img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: auto auto;
+        }
+        h4 {
+            display: grid;
+            place-items: center;
+        }
+
+    }
+
+    &.switcheroo {
+        margin-left: -250px;
+    }
+
+    a {
+        color: $baby-powder;
+        font-weight: 300;
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
+        // background-clip: text;
+        // font-weight: bold;
+
+        &:hover {
+            background: $saffron;
+            font-weight: 300;
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
+            // background-clip: text;
+        }
+        &:focus {
+            color: $saffron;
+            background-color: $prussian-blue;
+            // text-decoration: none;
+            transition: all 0.3s;
+        }
+    }
+
+    a[data-toggle="collapse"] {
+        position: relative;
+    }
+
+    .dropdown-toggle::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    ul {
+        ul {
+            li {
+                background-color: $indigo-dye;
+            }
+        }
+        li {
+            // background-color: $indigo-dye;
+            a {
+                display: block;
+                padding: 10px;
+                font-size: 1em;
+
+                &:hover {
+                    color: $oxford-blue;
+                    font-weight: 500;
+                    text-decoration: none;
+                    background-color: $beau-blue;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    
+        &.switcheroo {
+            margin-left: 0;
+        }
+    }
+
+}
+
+body {
+    background-color: lightgray;
+}

@@ -104,6 +104,7 @@
 
     //fonts
 $brandFont: "Matrix";
+$brandFontMCK: "Playfair_Display";
 $navFont: "LCDsolid";
 // $bannerFont: "EdgeOfTheGalaxy";
 // $bannerFont: "Mandalore";
@@ -144,18 +145,23 @@ $gradient-radial: radial-gradient(#0d0a0bff, #6dcd3cff, #ffb81fff, #e61d0fff, #f
 .header_area .main-menu {
 
     .navbar {
-        padding: 1rem 20rem;
+        // padding: 1rem 20rem;
 
         .navbar-brand{
-            padding: 0 2rem 0 5rem;
+            padding: 0 1rem 0 1rem;
             // background: red;
             font-family: $brandFont, "Hack", cursive;
             text-transform: uppercase;
             // font-variant: ;
             color: $lime-green;
             font-size: 2.3rem;
+            // font-size: 100%;
+            // width: 80%;
+            // height: auto;
             
         }
+
+
     }
     
     .nav-item {
@@ -187,15 +193,64 @@ $gradient-radial: radial-gradient(#0d0a0bff, #6dcd3cff, #ffb81fff, #e61d0fff, #f
     }
 
     .navbar-toggler {
-        background: $gamboge;
-        color: red;
-        // position: ;
+        background: $lime-green;
+        border-color: $vermilion;
+        border-width: thin;
+
+        .navbar-toggler-icon {
+            
+        }
     }
 
+    // dark theme toggler start
+    .toggle input[type=checkbox] {
+        display: none;
+    }
+    
+    .toggle label {
+        background-color: #777;
+        border: 2px solid #555;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: all ease-in-out 0.3s;
+        width: 100px;
+        height: 50px;
+    }
+    
+    .toggle label::after {
+        background-color: #555;
+        border-radius: 50%;
+        content: ' ';
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        transition: all ease-in-out 0.3s;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .toggle input[type=checkbox]:checked ~ label {
+        background-color: #00a0fc;
+        border-color: #006dc9;
+    }
+    
+    .toggle input[type=checkbox]:checked ~ label::after {
+        background-color: #0054B0;
+        transform: translateX(50px);
+    }
+    // dark theme toggler end
 
 }
 
 
+.darkness {
+    font-family: "Playfair_Display" !important;
+    color: $cultured !important;
+}
 
 // end navigation
 
@@ -204,8 +259,8 @@ html, body {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    // background-color: $rich-black-fogra-39;
-    background-color: whitesmoke;
+    background-color: $rich-black-fogra-39;
+    // background-color: whitesmoke;
 }
 
 // start banner

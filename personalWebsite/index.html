@@ -15,6 +15,8 @@
 
         <!-- custom css file -->
         <link rel="stylesheet" href="css/styles.css">
+        <!-- dark theme toggle css file -->
+        <link disabled id="dark-reader" rel="stylesheet" href="css/dark.css">
 
         <!-- responsive css file -->
         <link rel="stylesheet" href="css/responsive.css">
@@ -26,21 +28,31 @@
         <header class="header_area">
             <div class="main-menu">
                 <!-- removing bg-light as the end of the nav class makes it transparent -->
-                <nav class="navbar navbar-expand-lg navbar-dark">
+                <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark">
                     
                   
                     <!-- brand -->
-                    <div class="mx-auto order-0">
-                      <a class="navbar-brand " href="#">tony</a>
+                    <!-- <div class="navbar-header container-fluid"> -->
+                      <a class="navbar-brand" id="mellamo" href="#">tony</a>
+                    <!-- </div> -->
+                    
+                    <!-- testing button version of theme toggler -->
+                    <button onclick="morpheus()">Test</button>
+
+
+                    <!-- toggle button for theme -->
+                    <div class="toggle">
+                      <input type="checkbox" id="toggle" />
+                      <label for="toggle"></label>
                     </div>
 
                     <!-- toggler button for navigation -->
-                    <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
                     
                     <!-- navigation -->
-                    <div class="collapse navbar-collapse order-0" id="navbarNav">
+                    <div class="collapse navbar-collapse" id="navbarNav">
                         <div class="mr-auto"></div>
                       <ul class="navbar-nav">
                         <li class="nav-item active">
@@ -93,7 +105,7 @@
 
         </main>
 
-        
+        <script src="js/main.js"></script>        
         <!-- jquery js file -->
         <script src="js/jquery-3.5.1.min.js"></script>
 

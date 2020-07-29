@@ -1,0 +1,395 @@
+// // $primary1: #051c2c;
+// // $primary2: #ffffff;
+
+// @function str-replace($string, $search, $replace: "") {
+// 	$index: str-index($string, $search);
+
+// 	@if $index {
+// 		@return str-slice($string, 1, $index - 1) + $replace +
+// 			str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+// 	}
+
+// 	@return $string;
+// }
+
+
+// @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+// 	$src: null;
+
+// 	$extmods: (
+// 		eot: "?",
+// 		svg: "#" + str-replace($name, " ", "_")
+// 	);
+
+// 	$formats: (
+// 		otf: "opentype",
+// 		ttf: "truetype"
+// 	);
+
+// 	@each $ext in $exts {
+// 		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+// 		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+// 		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+// 	}
+
+// 	@font-face {
+// 		font-family: quote($name);
+// 		font-style: $style;
+// 		font-weight: $weight;
+// 		font-display: swap;
+// 		src: $src;
+// 	}
+// }
+
+// @include font-face(Hack,"../fonts/Hack",null,null,woff);
+// @include font-face(Playfair_Display,"../fonts/Playfair_Display",null,null,ttf);
+// @include font-face(Cormorant_Garamond,"../fonts/Cormorant_Garamond",null,null,ttf);
+//can you use @use instead?
+
+// other method?
+// @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+
+
+@font-face {
+    font-family: 'Hack';
+    // font-style: ;
+    // font-weight: ;
+    font-display: swap;
+    src: url(../fonts/Hack/hack-regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: "Playfair_Display";
+    font-display: swap;
+    src: url(../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-display: swap;
+    src: url(../fonts/Poppins/Poppins-Regular.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: "Matrix";
+    font-display: swap;
+    src: url(../fonts/MatrixFont/Matrix-MZ4P.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "LCDsolid";
+    font-display: swap;
+    src: url(../fonts/LCDsolid/LcdSolid-VPzB.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "EdgeOfTheGalaxy";
+    font-display: swap;
+    src: url(../fonts/EdgeOfTheGalaxy/EdgeOfTheGalaxyRegular-OVEa6.otf) format('otf');
+}
+
+@font-face {
+    font-family: "AlphaCenturi";
+    font-display: swap;
+    src: url(../fonts/AlphaCenturi/Alphacentauri-MVY4p.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Mandalore";
+    font-display: swap;
+    src: url(../fonts/mandalore-font/Mandalore-K77lD.otf) format('otf');
+}
+
+// Global Variable Start
+
+    //fonts
+$navbarFont: "Poppins";
+
+    //colors
+$primaryBlack: black;
+$secondaryYellow: yellow;
+
+$prussian-blue: #002642ff;
+$claret: #840032ff;
+$gamboge: #e59500ff;
+$gainsboro: #e5dadaff;
+$rich-black-fogra-29: #02040fff;
+$cultured: #eef0f2ff;
+$ghost-white: #fafaffff;
+
+$rich-black-fogra-39: #0d0a0bff;
+$lime-green: #6dcd3cff;
+$selective-yellow: #ffb81fff;
+$vermilion: #e61d0fff;
+$baby-powder: #fdfffcff;
+
+
+$oxford-blue: #0c1531ff;
+$indigo-dye: #06456aff;
+$celadon-blue: #0075a2ff;
+$beau-blue: #cae5ffff;
+$alice-blue: #e0ecfaff;
+$cultured: #f5f3f5ff;
+$platinum: #dfe2e2ff;
+$saffron: #eab934ff;
+
+// Global Variable End
+
+// guide used: https://bootstrapious.com/p/bootstrap-sidebar
+
+// start navigation
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    // align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    // min-height: 100vh;
+    height: 100vh;
+    top: 0; left: 0;
+    // top layer z-index
+    z-index: 9999;
+
+    font-family: $navbarFont, sans-serif;
+    background: $oxford-blue;
+    color: $saffron;
+    transition: all 0.3s;
+
+    .sidebar-header {
+        padding: 20px;
+        background: $oxford-blue;
+        // background: $vermilion;
+
+        img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: auto auto;
+        }
+        .userGreeting {
+            display: grid;
+            place-items: center;
+        }
+        i {
+            font-size: 72px;
+            padding: 20px;
+            display: grid;
+            place-items: center;
+        }
+
+    }
+
+    &.switcheroo {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+        // disappearing sidebar
+        // margin-left: -250px;
+
+        .userGreeting {
+            display: none;
+        }
+        .userPicture {
+
+        }
+        .sidebar-header i {
+            font-size: 32px;
+            margin-top: 5px;
+            padding: 5px;
+        }
+        #dismiss {
+            display: grid;
+            place-items: center;
+            transform: scaleX(-1);
+        }
+
+        ul {
+            li a {
+            padding: 20px 10px;
+            text-align: center;
+            font-size: .85em;
+                i {
+                    margin-right: 0;
+                    display: block;
+                    font-size: 1.8em;
+                    margin-bottom: 5px;
+                }
+            }
+
+            ul a {
+                padding: 10px !important;
+            }
+        }
+
+        .sidebarFooter {
+            .socialLinks {
+                display: flexbox;
+                padding: 5px;
+                margin-right: 10px;
+            }
+            hr {
+                display: grid;
+                place-items: center;
+                width: 50px;
+            }
+        }
+        
+    }
+
+    #dismiss {
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        // top right corner
+        top: 10px;
+        right: 10px;
+    }
+
+    a {
+        color: $baby-powder;
+        font-weight: 300;
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
+        // background-clip: text;
+        // font-weight: bold;
+
+        &:hover {
+            background: $saffron;
+            font-weight: 300;
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
+            // background-clip: text;
+        }
+        &:focus {
+            color: $saffron;
+            background-color: $prussian-blue;
+            // text-decoration: none;
+            transition: all 0.3s;
+        }
+    }
+
+    a[data-toggle="collapse"] {
+        position: relative;
+    }
+
+    .dropdown-toggle::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    ul {
+        ul {
+            li {
+                background-color: $indigo-dye;
+            }
+        }
+        li {
+            // background-color: $indigo-dye;
+            a {
+                display: block;
+                padding: 10px;
+                font-size: 1em;
+
+                &:hover {
+                    color: $oxford-blue;
+                    font-weight: 500;
+                    text-decoration: none;
+                    background-color: $beau-blue;
+                }
+            }
+        }
+    }
+
+    .sidebarFooter {
+        display: grid;
+        place-items: center;
+        
+        img {
+            max-width: 35%;
+            height: auto;
+            display: block;
+            margin: auto auto;
+            overflow: hidden;
+        }
+        .mattressTypography {
+            font-family: "AlphaCenturi";
+            font-size: 1.1em;
+            padding-bottom: 20px;
+            padding-top: 0;
+            display: grid;
+            place-items: center;
+        }
+
+        hr {
+            height: 1px;
+            background-color: white !important;
+            border: none;
+            width: 80%;
+        }
+        .socialLinks {
+            a {
+                color: $beau-blue;
+                padding: 3px;
+    
+                &:hover {
+                    background-color: white;
+
+                    &#twitter {
+                        color: #1da1f2; }
+                    &#facebook {
+                        color: #4267b2; }
+                    &#youtube {
+                        color: #ff0000; }
+                    &#medium {
+                        color: black; }
+                    &#linkedin {
+                        color: #2867b2; }
+                }
+
+            }
+        }
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    // fullscreen
+    width: 100vw;
+    padding-left: 80px;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: 0.7);
+    // middle layer zindex
+    z-index: 998;
+    opacity: 0;
+    // animate transition
+    transition: all 0.5s ease-in-out;
+
+    &.switcheroo {
+        display: block;
+        opacity: 1;
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        // margin-left: -250px;
+    
+        &.switcheroo {
+            margin-left: 0;
+        }
+    }
+
+}
+
+body {
+    background-color: lightgray;
+}
