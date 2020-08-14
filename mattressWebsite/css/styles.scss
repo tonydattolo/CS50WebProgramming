@@ -140,9 +140,20 @@ $saffron: #eab934ff;
 // start navigation
 
 .wrapper {
-    display: flex;
-    width: 100%;
+    // display: flex;
+    // width: 100%;
     // align-items: stretch;
+
+    display: grid;
+
+    // grid-template-columns: minmax(80px, 250px) 1fr;
+    grid-template-columns: minmax(80px, 250px) 1fr;
+    // grid-template-rows: auto 1fr auto;
+    &.switcheroo {
+        grid-column: 1fr;
+    }
+
+
 }
 
 #sidebar {
@@ -153,12 +164,14 @@ $saffron: #eab934ff;
     top: 0; left: 0;
     // top layer z-index
     z-index: 9999;
+    // padding: 20px;
 
     font-family: $navbarFont, sans-serif;
     background: $oxford-blue;
     color: $saffron;
     transition: all 0.3s;
 
+    
     .sidebar-header {
         padding: 20px;
         background: $oxford-blue;
@@ -189,6 +202,7 @@ $saffron: #eab934ff;
         text-align: center;
         // disappearing sidebar
         // margin-left: -250px;
+
 
         .userGreeting {
             display: none;
@@ -243,10 +257,11 @@ $saffron: #eab934ff;
     #dismiss {
         width: 35px;
         height: 35px;
-        position: absolute;
+        position: relative;
         // top right corner
-        top: 10px;
-        right: 10px;
+        margin-left: 10px;
+        margin-top: 10px;
+
     }
 
     a {
@@ -358,6 +373,63 @@ $saffron: #eab934ff;
     }
 }
 
+// .content-tabs {
+//     margin: 20px;
+//     .nav-link {
+//         &.active {
+//             // color: red;
+//             background-color: red;
+//         }
+//     }
+// }
+
+#content {
+    // width: 100%;
+    // height: 100%;
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        margin: 20px;
+        margin-bottom: 0;
+        // display: grid; //use this for mobile?
+
+        button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+    
+            &:hover {
+                background-color: #ddd;
+            }
+            &.active {
+                background-color: #ccc;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
+    .tabcontent {
+        // display: flexbox;
+        margin: 0 20px; // top/bottom L/R
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+        animation: fadeEffect 1s;
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        height: auto;
+        width: auto;
+    }
+}
+
+
+
 .overlay {
     display: none;
     position: fixed;
@@ -384,12 +456,12 @@ $saffron: #eab934ff;
         // margin-left: -250px;
     
         &.switcheroo {
-            margin-left: 0;
+            // margin-left: 0;
         }
     }
 
 }
 
 body {
-    background-color: lightgray;
+    background-color: white;
 }

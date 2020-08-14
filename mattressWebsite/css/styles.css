@@ -39,8 +39,11 @@
   src: url(../fonts/mandalore-font/Mandalore-K77lD.otf) format("otf");
 }
 .wrapper {
-  display: flex;
-  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(80px, 250px) 1fr;
+}
+.wrapper.switcheroo {
+  grid-column: 1fr;
 }
 
 #sidebar {
@@ -120,9 +123,9 @@
 #sidebar #dismiss {
   width: 35px;
   height: 35px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  position: relative;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 #sidebar a {
   color: #fdfffcff;
@@ -209,6 +212,47 @@
   color: #2867b2;
 }
 
+#content .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  margin: 20px;
+  margin-bottom: 0;
+}
+#content .tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+#content .tab button:hover {
+  background-color: #ddd;
+}
+#content .tab button.active {
+  background-color: #ccc;
+  border-bottom: 1px solid #ccc;
+}
+#content .tabcontent {
+  margin: 0 20px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  animation: fadeEffect 1s;
+  height: auto;
+  width: auto;
+}
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .overlay {
   display: none;
   position: fixed;
@@ -226,13 +270,8 @@
   margin-left: 80px;
 }
 
-@media (max-width: 768px) {
-  #sidebar.switcheroo {
-    margin-left: 0;
-  }
-}
 body {
-  background-color: lightgray;
+  background-color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
